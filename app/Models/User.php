@@ -9,10 +9,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 use Laravel\Passport\HasApiTokens;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
+use App\Core\Entities\CommonModel;
 
-class User extends Model implements AuthenticatableContract, AuthorizableContract
+class User extends Model implements AuthenticatableContract, AuthorizableContract, Transformable
 {
-    use HasApiTokens,Authenticatable, Authorizable, HasFactory;
+    use HasApiTokens,Authenticatable, Authorizable,
+        HasFactory, TransformableTrait, CommonModel;
 
     /**
      * The attributes that are mass assignable.
