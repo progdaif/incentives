@@ -1,5 +1,4 @@
 <?php
-
 require_once __DIR__.'/../vendor/autoload.php';
 
 (new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
@@ -113,7 +112,7 @@ $app->alias('cache', \Illuminate\Cache\CacheManager::class);  // if you don't ha
 $app->register(Spatie\Permission\PermissionServiceProvider::class);
 
 // Register Repository service provider
-$app->register(Prettus\Repository\Providers\LumenRepositoryServiceProvider::class);
+$app->register(\Prettus\Repository\Providers\LumenRepositoryServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
