@@ -57,7 +57,10 @@ final class PointsCalculatorCriteria extends CoreCriteria
         $userId = $this->user->id;
         $query = $model->selectRaw('SUM(points) AS user_points')
                         ->where('user_id', '=', $userId)
-                        ->where('expired_at', '>', $date)
+                        ->where(function ($query) use ($date) {
+                            $query->where('expired_at', '>', $date)
+                                ->orWhereNull('expired_at');
+                        })
                         ->whereNull('exchanged_at')
                         ->where('created_at', '<=', $date);
         return $query;
