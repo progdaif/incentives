@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Core\Repositories\CoreRepositoryEloquent;
 use App\Models\User;
 
-class UserRepositoryEloquent extends CoreRepositoryEloquent
+final class UserRepositoryEloquent extends CoreRepositoryEloquent
 {
     /**
      * Specify Model class name

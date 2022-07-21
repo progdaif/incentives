@@ -15,11 +15,12 @@ use App\Core\Contracts\CoreRepositoryContract;
 abstract class CoreRepositoryEloquent extends BaseRepository implements CoreRepositoryContract
 {
     /*
-     * Boot up the repository, pushing criteria
+     * Boot up the repository
      *
+     * @return void
      * */
     public function boot()
     {
-        $this->pushCriteria(app(RequestCriteria::class));
+        //
     }
 }

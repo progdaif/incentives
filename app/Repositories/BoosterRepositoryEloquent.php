@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Core\Repositories\CoreRepositoryEloquent;
 use App\Models\Booster;
 
-class BoosterRepositoryEloquent extends CoreRepositoryEloquent
+final class BoosterRepositoryEloquent extends CoreRepositoryEloquent
 {
     /**
      * Specify Model class name
