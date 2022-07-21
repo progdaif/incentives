@@ -11,3 +11,10 @@ and boosters. You can find them in database/migrations.
 
 - I created the main models and repositories with the basic needed
 relationships. Also super calsses related to them.
+
+- I created a service for calculating points for  user and depended on 
+criteria to do this.
+
+- I created route linked to the controller that service is injected Into
+
+- I updated core classes for better architectural design

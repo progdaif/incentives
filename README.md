@@ -30,7 +30,10 @@ Please add test cases.
 
 # Installation
 
-You need to run ./defploy.sh to install the project
+Copy the ./.env.example file to be ./.env and add your database
+credentials then
+You need to run ./deploy.sh to install the project
+make sure that ./deploy.sh has the right permissions
 
 # Documentation
 
