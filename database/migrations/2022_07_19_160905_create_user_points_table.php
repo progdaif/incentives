@@ -32,7 +32,7 @@ return new class extends Migration {
             $table->engine = 'InnoDB';
             $table->index(
                 ['user_id', 'expired_at', 'exchanged_at'],
-                'active_user_points'
+                'user_points_active_user_points_index'
             );
         });
     }

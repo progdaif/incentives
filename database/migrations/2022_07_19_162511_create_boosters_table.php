@@ -52,23 +52,23 @@ return new class extends Migration {
             $table->engine = 'MyISAM';
             $table->index(
                 ['booster_available_at', 'booster_expired_at'],
-                'active_boosters_index'
+                'boosters_active_boosters_index'
             );
             $table->index(
                 ['booster_available_at', 'booster_expired_at', 'action_id'],
-                'active_boosters_action_index'
+                'boosters_active_boosters_action_index'
             );
             $table->index(
                 ['action_id', 'actions_reapeated_times'],
-                'reapeated_actions_index'
+                'boosters_reapeated_actions_index'
             );
             $table->index(
                 ['action_id', 'actions_reapeated_times', 'actions_within_minutes'],
-                'reapeated_actions_interval_index'
+                'boosters_reapeated_actions_interval_index'
             );
             $table->index(
                 ['actions_from_time', 'actions_to_time'],
-                'boosters_day_times_index'
+                'boosters_boosters_day_times_index'
             );
         });
     }
