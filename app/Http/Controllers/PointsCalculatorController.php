@@ -7,6 +7,7 @@ use App\Http\Requests\PointsCalculatorRequest;
 use App\Core\Controllers\Controller;
 use App\Services\PointsCalculatorService;
 use App\Services\UserLoaderService;
+use Carbon\Carbon;
 use Throwable;
 
 /**
@@ -49,7 +50,12 @@ class PointsCalculatorController extends Controller
         try {
             $user = $loader->user($request);
             $this->authenticate($user, ['get-points']);
-            $points = $service->calculate($user);
+            $date = null;
+            if ($request->has('date')) {
+                $date = $request->date;
+                $date = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+            }
+            $points = $service->calculate($user, $date);
             return $this->successResponse(
                 ['points' => $points],
                 "Points for user retreived successfully"
