@@ -18,6 +18,6 @@ class UserPoint extends CoreModel
      */
     protected $fillable = [
         'points', 'action_id', 'user_id', 'expired_at',
-        'exchanged_at', 'booster_id'
+        'exchanged_at', 'booster_id', 'created_at'
     ];
 }

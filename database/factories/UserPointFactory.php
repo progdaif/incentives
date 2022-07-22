@@ -2,17 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
+use App\Models\UserPoint;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class UserFactory extends Factory
+class UserPointFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = User::class;
+    protected $model = UserPoint::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +23,10 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name,
-            'email' => $this->faker->unique()->safeEmail,
-            'password' => $this->faker->randomAscii()
+            'points' => 1,
+            'action_id' => 1,
+            'user_id' => 0,
+            'created_at' => Carbon::now()
         ];
     }
 }
