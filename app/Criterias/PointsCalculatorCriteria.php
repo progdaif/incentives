@@ -61,7 +61,10 @@ final class PointsCalculatorCriteria extends CoreCriteria
                             $query->where('expired_at', '>', $date)
                                 ->orWhereNull('expired_at');
                         })
-                        ->whereNull('exchanged_at')
+                        ->where(function ($query) use ($date) {
+                            $query->where('exchanged_at', '>', $date)
+                                ->orWhereNull('exchanged_at');
+                        })
                         ->where('created_at', '<=', $date);
         return $query;
     }
