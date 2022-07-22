@@ -15,6 +15,9 @@ relationships. Also super calsses related to them.
 - I created a service for calculating points for  user and depended on 
 criteria to do this.
 
-- I created route linked to the controller that service is injected Into
+- I created route linked to the controller that service is injected Into.
 
-- I updated core classes for better architectural design
+- I updated core classes for better architectural design.
+
+- I created 5 test cases for user permissions, expired points, exchanged points and normal 
+points at specific time.
